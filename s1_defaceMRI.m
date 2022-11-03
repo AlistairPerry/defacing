@@ -1,11 +1,9 @@
-clc
-clear
-close all
+function s1_defaceMRI(T1_DIR)
 
 % Defines the files locations.
-config.path.mri  = '../../data/anatomy/T1/';
-config.path.def  = '../../data/anatomy/T1-def/';
-config.path.trim = '../../data/anatomy/T1-deftrim/';
+config.path.mri  = T1_DIR;
+config.path.def  = [T1_DIR '/T1-def/'];
+config.path.trim = [T1_DIR '/T1-deftrim/'];
 config.path.patt = '*.nii.gz';
 
 % Compress (or not) the output file.
@@ -179,4 +177,8 @@ for findex = 1: numel ( files )
         delete ( sprintf ( '%s%s.nii', config.path.def, basename ) )
         delete ( sprintf ( '%s%s.nii', config.path.trim, basename ) )
     end
+    
+end
+
+
 end
