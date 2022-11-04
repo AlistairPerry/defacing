@@ -2,6 +2,7 @@
 
 # Based on FreeSurfer scripts:
 # * talairach_avi 1.9 by Nick Schmansky
+# Adapted by AP to make it pipeline-friendly
 
 # :)
 inp_dir=$1 
@@ -9,7 +10,7 @@ inp_dir=$1
 # Lists the MRI images in the '$inp_dir' folder.
 IFS=$' \n'
 pushd $inp_dir &> /dev/null
-files=( $( ls -1 *.nii.gz 2> /dev/null ) )
+files=( $( ls -1 *T1w.nii.gz 2> /dev/null ) )
 stat=$?
 popd &> /dev/null
 

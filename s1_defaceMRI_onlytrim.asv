@@ -16,12 +16,12 @@ config.path.patt = '*T1w.nii.gz';
 % Compress (or not) the output file.
 config.gzip      = true;
 
-% Finds script 
-scriptpath = fileparts(mfilename('fullpath'));
+% Finds 
+scriptpath 
 
 % Adds the 'functions' folder to the path.
-addpath ( sprintf ( '%s/spm12_functions/', scriptpath ) );
-addpath ( sprintf ( '%s/functions/', scriptpath ) );
+addpath ( sprintf ( '%s/spm12_functions/', pwd ) );
+addpath ( sprintf ( '%s/functions/', pwd ) );
 
 
 % Adds, if needed, the FieldTrip folder to the path.
